@@ -244,3 +244,91 @@ Received Import Request.
 Start importing Assets/Materials/Wall.mat using Guid(51621bde0a15647fd8359c54cc0c558f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9d463cfd335feedb2665ddea3695a6ba') in 0.004038 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 65.861862 seconds.
+  path: Assets/Prefabs
+  artifactKey: Guid(5fe7700173bb74f11bc6e48e6ff785a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs using Guid(5fe7700173bb74f11bc6e48e6ff785a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c87a133cddef728eb2abfdc624b3783f') in 0.000365 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 18.343201 seconds.
+  path: Assets/Prefabs/Prey.prefab
+  artifactKey: Guid(66bd116490a184ff7ba412088a0a3700) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Prey.prefab using Guid(66bd116490a184ff7ba412088a0a3700) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a8281c13a16360d4b0cf2e4a8d06a4e8') in 0.003945 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 4
+========================================================================
+Received Import Request.
+  Time since last request: 19.903600 seconds.
+  path: Assets/Prefabs/Prey.prefab
+  artifactKey: Guid(66bd116490a184ff7ba412088a0a3700) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Prey.prefab using Guid(66bd116490a184ff7ba412088a0a3700) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '02627a0a597ecc8240cfad5a43894118') in 0.010649 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 15.343445 seconds.
+  path: Assets/Prefabs/Prey.prefab
+  artifactKey: Guid(66bd116490a184ff7ba412088a0a3700) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Prey.prefab using Guid(66bd116490a184ff7ba412088a0a3700) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bb785cc4f4ddbdfc15eafa706dc3ae94') in 0.003979 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 2.618001 seconds.
+  path: Assets/Prefabs/Prey.prefab
+  artifactKey: Guid(66bd116490a184ff7ba412088a0a3700) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Prey.prefab using Guid(66bd116490a184ff7ba412088a0a3700) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '545df54fd91c528590b020390e73eb65') in 0.003868 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 4.028014 seconds.
+  path: Assets/Prefabs/Prey.prefab
+  artifactKey: Guid(66bd116490a184ff7ba412088a0a3700) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Prey.prefab using Guid(66bd116490a184ff7ba412088a0a3700) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9f633d0a4f3bfe814bfa3584d526057c') in 0.003691 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 12.704505 seconds.
+  path: Assets/Prefabs/Prey.prefab
+  artifactKey: Guid(66bd116490a184ff7ba412088a0a3700) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Prey.prefab using Guid(66bd116490a184ff7ba412088a0a3700) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a9bc32ba5336ba3f5005bce6c9c97c84') in 0.004613 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 1131.709141 seconds.
+  path: Assets/Materials/Black.mat
+  artifactKey: Guid(c9e5a9a8cbcdc42f990e763c32098d67) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Black.mat using Guid(c9e5a9a8cbcdc42f990e763c32098d67) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ce0780e1b49d6552238c79c9d081c7b9') in 0.004904 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 336.706642 seconds.
+  path: Assets/Materials/New Material.mat
+  artifactKey: Guid(34e53e77809014bffa49bbadee685c89) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/New Material.mat using Guid(34e53e77809014bffa49bbadee685c89) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '797189378e3e0a73a254742e321275bd') in 0.004610 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 14.838082 seconds.
+  path: Assets/Materials/Predator.mat
+  artifactKey: Guid(34e53e77809014bffa49bbadee685c89) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Predator.mat using Guid(34e53e77809014bffa49bbadee685c89) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '137749f29b8dacb5941dd69222ba0498') in 0.005253 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 671.178300 seconds.
+  path: Assets/Scripts
+  artifactKey: Guid(259f982742954418496f73562dc35f10) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts using Guid(259f982742954418496f73562dc35f10) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '04aee887e1abbbaa36379da39d7fb0e0') in 0.000364 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
