@@ -1,0 +1,25 @@
+﻿<Properties StartupConfiguration="{E9EEB30A-BFB1-B599-979E-712305F6805F}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/MovingWall.cs">
+    <Files>
+      <File FileName="Assets/Scripts/MovingWall.cs" Line="7" Column="25" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Lab5">
+            <Node name="Assets" expanded="True">
+              <Node name="Scripts" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="ffc7186f-f695-4536-bc83-e0d86516a3a8" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
