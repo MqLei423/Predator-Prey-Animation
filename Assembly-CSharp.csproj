@@ -61,6 +61,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets/Scripts/MovingWall.cs" />
+    <Compile Include="Assets/Scripts/PredatorBehavior.cs" />
     <Compile Include="Assets/Scripts/PreyBehavior.cs" />
   </ItemGroup>
   <ItemGroup>

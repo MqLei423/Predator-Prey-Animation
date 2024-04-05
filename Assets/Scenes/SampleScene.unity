@@ -695,9 +695,10 @@ GameObject:
   - component: {fileID: 658335419}
   - component: {fileID: 658335418}
   - component: {fileID: 658335417}
+  - component: {fileID: 658335421}
   m_Layer: 0
   m_Name: Predator(1)
-  m_TagString: Untagged
+  m_TagString: Predator
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -711,7 +712,7 @@ Transform:
   m_GameObject: {fileID: 658335415}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 13.5, y: 0, z: -0.069999695}
+  m_LocalPosition: {x: 19.69, y: 0, z: 9.71}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -791,6 +792,33 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 658335415}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!54 &658335421
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 658335415}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 84
+  m_CollisionDetection: 0
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1006,7 +1034,7 @@ GameObject:
   - component: {fileID: 781073355}
   m_Layer: 0
   m_Name: Prey(3)
-  m_TagString: Untagged
+  m_TagString: Prey
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1141,6 +1169,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 3
   target: {fileID: 89333430}
+  origin: {fileID: 800432948}
 --- !u!1 &781237175
 GameObject:
   m_ObjectHideFlags: 0
@@ -1882,6 +1911,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 3
   target: {fileID: 89333430}
+  origin: {fileID: 800432948}
 --- !u!54 &1031096449
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2132,8 +2162,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 178d5b7a76dc34e91a48f0b3ae241b5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
-  moveDistantce: 6
 --- !u!1 &1493948335
 GameObject:
   m_ObjectHideFlags: 0
@@ -2402,7 +2430,7 @@ GameObject:
   - component: {fileID: 1602082248}
   m_Layer: 0
   m_Name: Prey(2)
-  m_TagString: Untagged
+  m_TagString: Prey
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2510,6 +2538,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 3
   target: {fileID: 89333430}
+  origin: {fileID: 800432948}
 --- !u!54 &1602082249
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2691,7 +2720,7 @@ GameObject:
   - component: {fileID: 1839681782}
   m_Layer: 0
   m_Name: Prey(4)
-  m_TagString: Untagged
+  m_TagString: Prey
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2826,6 +2855,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 3
   target: {fileID: 89333430}
+  origin: {fileID: 800432948}
 --- !u!1 &1850641617
 GameObject:
   m_ObjectHideFlags: 0
@@ -2873,8 +2903,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 178d5b7a76dc34e91a48f0b3ae241b5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
-  moveDistantce: 5
 --- !u!65 &1850641620
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2958,9 +2986,10 @@ GameObject:
   - component: {fileID: 2033714788}
   - component: {fileID: 2033714787}
   - component: {fileID: 2033714786}
+  - component: {fileID: 2033714790}
   m_Layer: 0
   m_Name: Predator(2)
-  m_TagString: Untagged
+  m_TagString: Predator
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3054,6 +3083,33 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2033714784}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!54 &2033714790
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2033714784}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 84
+  m_CollisionDetection: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

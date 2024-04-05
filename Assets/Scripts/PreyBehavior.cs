@@ -6,14 +6,17 @@ namespace MengQiLei
     {
         [SerializeField] private float moveSpeed = 3f;
         [SerializeField] private GameObject target;
+        [SerializeField] private GameObject origin;
         private float avoidDistance = 3f;
         private float rotationSpeed = 5f;
         private int viewAngle = 90;
         private Vector3 targetPos;
+        private Vector3 respawnPos;
 
         private void Start()
         {
             targetPos = new Vector3(target.transform.position.x, 1f, target.transform.position.z);
+            respawnPos = new Vector3(origin.transform.position.x, 1f, origin.transform.position.z);
         }
 
         private void Update()
@@ -36,6 +39,14 @@ namespace MengQiLei
 
         }
 
+        private void OnCollisionEnter(Collision collision)
+        {
+            if (collision.gameObject.CompareTag("Predator")) {
+                // Collided with a predator
+                Die();
+            }
+        }
+
         private bool wallAhead()
         {
             RaycastHit hit;
@@ -53,8 +64,8 @@ namespace MengQiLei
             Vector3 leftDirection = Quaternion.Euler(0, -viewAngle / 2, 0) * transform.forward;
             Vector3 rightDirection = Quaternion.Euler(0, viewAngle / 2, 0) * transform.forward;
 
-            Debug.DrawRay(transform.position, leftDirection * avoidDistance, Color.red);
-            Debug.DrawRay(transform.position, rightDirection * avoidDistance, Color.red);
+            Debug.DrawRay(transform.position, leftDirection * avoidDistance, Color.green);
+            Debug.DrawRay(transform.position, rightDirection * avoidDistance, Color.green);
 
             int count = 0;
             // Check for obstacles on the left side
@@ -90,6 +101,14 @@ namespace MengQiLei
             }
         }
 
+        private void Die()
+        {
+            transform.position = respawnPos;
+        }
 
+        public bool isPrey()
+        {
+            return true;
+        }
     }
 }
