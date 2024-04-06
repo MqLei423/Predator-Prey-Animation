@@ -1,9 +1,15 @@
 ﻿<Properties StartupConfiguration="{E9EEB30A-BFB1-B599-979E-712305F6805F}|">
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="b01c9341-4cae-475e-9c3c-2eaf406bb78f" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/PredatorBehavior.cs">
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/PreyBehavior.cs">
     <Files>
-      <File FileName="Assets/Scripts/PreyBehavior.cs" Line="44" Column="62" />
-      <File FileName="Assets/Scripts/PredatorBehavior.cs" Line="50" Column="17" />
+      <File FileName="Assets/Scripts/PreyBehavior.cs" Line="80" Column="52" />
+      <File FileName="Assets/Scripts/PredatorBehavior.cs" Line="111" Column="1" />
+      <File FileName="Assets/Scripts/MovingWall.cs" Line="12" Column="41" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -17,10 +23,5 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="f4e83c08-52fa-4c18-88e2-2d2df00e79ec" />
 </Properties>

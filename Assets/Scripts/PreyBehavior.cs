@@ -69,19 +69,16 @@ namespace MengQiLei
             Debug.DrawRay(transform.position, leftDirection * avoidDistance, Color.green);
             Debug.DrawRay(transform.position, rightDirection * avoidDistance, Color.green);
 
-            int count = 0;
             // Check for obstacles on the left ray
             if (Physics.Raycast(transform.position, leftDirection, out hit, avoidDistance) && !hit.collider.CompareTag("Prey"))
             {
                 avoidanceDirection += -leftDirection.normalized * (1f / hit.distance);
-                count++;
             }
 
             // Check for obstacles on the right ray
             if (Physics.Raycast(transform.position, rightDirection, out hit, avoidDistance) && !hit.collider.CompareTag("Prey"))
             {
                 avoidanceDirection += -rightDirection.normalized * (1f / hit.distance);
-                count++;
             }
 
             // Apply avoidance direction if needed

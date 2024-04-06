@@ -26,7 +26,7 @@ namespace MengQiLei
             // If wall present, prioritize wall avoiding
             for (int i = 0; i <= 180; i += 10)
             {
-                AvoidObstacle();
+                AvoidObstacle(i);
             }
 
             // Move forward
@@ -79,15 +79,15 @@ namespace MengQiLei
             return Physics.Raycast(transform.position, transform.forward, out hit, avoidDistance);
         }
 
-        private void AvoidObstacle()
+        private void AvoidObstacle(int angle)
         {
             // Cast rays to detect obstacles
             RaycastHit hit;
             Vector3 avoidanceDirection = Vector3.zero;
 
             // Calculate the angle of view
-            Vector3 leftDirection = Quaternion.Euler(0, -45, 0) * transform.forward;
-            Vector3 rightDirection = Quaternion.Euler(0, 45, 0) * transform.forward;
+            Vector3 leftDirection = Quaternion.Euler(0, -angle/2, 0) * transform.forward;
+            Vector3 rightDirection = Quaternion.Euler(0, angle/2, 0) * transform.forward;
 
             int count = 0;
             // Check for obstacles on the left ray
