@@ -9,11 +9,10 @@ namespace MengQiLei
 
         private Vector3 startPos;
         private Vector3 endPos;
-        private bool movingToEnd = true; // Flag to track direction of movement
+        private bool movingToEnd = true;
 
         void Start()
         {
-            // Initialize start and end positions
             startPos = transform.position;
             endPos = new Vector3(startPos.x, startPos.y, startPos.z - moveDistantce);
         }

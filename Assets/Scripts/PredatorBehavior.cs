@@ -23,6 +23,7 @@ namespace MengQiLei
                 }
             }
 
+            // If wall present, prioritize wall avoiding
             for (int i = 0; i <= 180; i += 10)
             {
                 AvoidObstacle();
@@ -36,17 +37,17 @@ namespace MengQiLei
 
         private void SearchForPrey(int angle)
         {
-            // Cast rays to detect obstacles
+            // Cast rays to detect prey
             RaycastHit hit;
             Vector3 chaseDirection = Vector3.zero;
 
-            // Calculate the angle of prey's view
+            // Calculate the angle of view
             Vector3 leftDirection = Quaternion.Euler(0, -angle / 2, 0) * transform.forward;
             Vector3 rightDirection = Quaternion.Euler(0, angle / 2, 0) * transform.forward;
             Debug.DrawRay(transform.position, leftDirection * chaseDistance, Color.red);
             Debug.DrawRay(transform.position, rightDirection * chaseDistance, Color.red);
 
-            // Check for obstacles on the left side
+            // Check for prey on the left ray
             if (Physics.Raycast(transform.position, leftDirection, out hit, chaseDistance))
             {
                 if (hit.collider.CompareTag("Prey"))
@@ -55,7 +56,7 @@ namespace MengQiLei
                 }
             }
 
-            // Check for obstacles on the right side
+            // Check for obstacles on the right ray
             if (Physics.Raycast(transform.position, rightDirection, out hit, chaseDistance))
             {
                 if (hit.collider.CompareTag("Prey"))
@@ -64,19 +65,12 @@ namespace MengQiLei
                 }
             }
 
+            // Turn facing direction to prey
             if (chaseDirection != Vector3.zero)
             {
                 Quaternion targetRotation = Quaternion.LookRotation(chaseDirection);
                 transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
             }
-        }
-
-        private void ChasePrey(Vector3 preyLastPos)
-        {
-            // Rotate towards the last known position of the prey
-            Vector3 directionToPrey = (preyLastPos - transform.position).normalized;
-            Quaternion targetRotation = Quaternion.LookRotation(directionToPrey);
-            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
         }
 
         private bool wallAhead()
@@ -91,12 +85,12 @@ namespace MengQiLei
             RaycastHit hit;
             Vector3 avoidanceDirection = Vector3.zero;
 
-            // Calculate the angle of prey's view
+            // Calculate the angle of view
             Vector3 leftDirection = Quaternion.Euler(0, -45, 0) * transform.forward;
             Vector3 rightDirection = Quaternion.Euler(0, 45, 0) * transform.forward;
 
             int count = 0;
-            // Check for obstacles on the left side
+            // Check for obstacles on the left ray
             if (Physics.Raycast(transform.position, leftDirection, out hit, avoidDistance))
             {
                 if (!hit.collider.CompareTag("Prey")) {
@@ -105,7 +99,7 @@ namespace MengQiLei
                 }
             }
 
-            // Check for obstacles on the right side
+            // Check for obstacles on the right ray
             if (Physics.Raycast(transform.position, rightDirection, out hit, avoidDistance))
             {
                 if (!hit.collider.CompareTag("Prey"))

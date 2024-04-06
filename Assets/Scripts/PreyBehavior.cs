@@ -44,7 +44,7 @@ namespace MengQiLei
         private void OnCollisionEnter(Collision collision)
         {
             if (collision.gameObject.CompareTag("Predator")) {
-                // Collided with a predator
+                // Collided with a predator, respawn
                 Die();
             }
         }
@@ -59,7 +59,6 @@ namespace MengQiLei
         // Keep away from wall and predator
         private void AvoidObstacle(int viewAngle)
         {
-            // Cast rays to detect obstacles
             RaycastHit hit;
             Vector3 avoidanceDirection = Vector3.zero;
 
@@ -71,14 +70,14 @@ namespace MengQiLei
             Debug.DrawRay(transform.position, rightDirection * avoidDistance, Color.green);
 
             int count = 0;
-            // Check for obstacles on the left side
+            // Check for obstacles on the left ray
             if (Physics.Raycast(transform.position, leftDirection, out hit, avoidDistance) && !hit.collider.CompareTag("Prey"))
             {
                 avoidanceDirection += -leftDirection.normalized * (1f / hit.distance);
                 count++;
             }
 
-            // Check for obstacles on the right side
+            // Check for obstacles on the right ray
             if (Physics.Raycast(transform.position, rightDirection, out hit, avoidDistance) && !hit.collider.CompareTag("Prey"))
             {
                 avoidanceDirection += -rightDirection.normalized * (1f / hit.distance);
