@@ -696,6 +696,7 @@ GameObject:
   - component: {fileID: 658335418}
   - component: {fileID: 658335417}
   - component: {fileID: 658335421}
+  - component: {fileID: 658335422}
   m_Layer: 0
   m_Name: Predator(1)
   m_TagString: Predator
@@ -712,7 +713,7 @@ Transform:
   m_GameObject: {fileID: 658335415}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 19.69, y: 0, z: 9.71}
+  m_LocalPosition: {x: 12.67, y: 0, z: -0.93}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -819,6 +820,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 84
   m_CollisionDetection: 0
+--- !u!114 &658335422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 658335415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c86f6d31872dc4e4bba77e875bbb5af4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -2073,7 +2086,7 @@ Transform:
   m_GameObject: {fileID: 1149660511}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.51, y: 1.5, z: -0.05}
+  m_LocalPosition: {x: -2.51, y: 1.5, z: -0.7}
   m_LocalScale: {x: 1, y: 3, z: 6}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2162,6 +2175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 178d5b7a76dc34e91a48f0b3ae241b5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveDistantce: 5
 --- !u!1 &1493948335
 GameObject:
   m_ObjectHideFlags: 0
@@ -2886,7 +2900,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 4.5, y: 1.5, z: 6.5}
-  m_LocalScale: {x: 1, y: 3, z: 6}
+  m_LocalScale: {x: 1, y: 3, z: 4}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1511390317}
@@ -2903,6 +2917,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 178d5b7a76dc34e91a48f0b3ae241b5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveDistantce: 6
 --- !u!65 &1850641620
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2987,6 +3002,7 @@ GameObject:
   - component: {fileID: 2033714787}
   - component: {fileID: 2033714786}
   - component: {fileID: 2033714790}
+  - component: {fileID: 2033714791}
   m_Layer: 0
   m_Name: Predator(2)
   m_TagString: Predator
@@ -3110,6 +3126,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 84
   m_CollisionDetection: 0
+--- !u!114 &2033714791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2033714784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c86f6d31872dc4e4bba77e875bbb5af4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

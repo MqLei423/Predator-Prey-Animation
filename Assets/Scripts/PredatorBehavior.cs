@@ -5,63 +5,76 @@ namespace MengQiLei
     public class PredatorBehavior : MonoBehaviour
     {
         private float moveSpeed = 4f;
-        private float rotationSpeed = 5f;
+        private float rotationSpeed = 8f;
         private float viewAngle = 30f;
         private float chaseDistance = 12f;
 
         private float avoidDistance = 3f;
 
-        private GameObject prey;
-        private Vector3 preyLastKnownPosition;
-
         private void Update()
         {
-            AvoidObstacle();
-
+     
             if (!wallAhead())
             {
                 // Check for nearby prey
-                if (prey != null && Vector3.Distance(transform.position, prey.transform.position) <= chaseDistance)
+                for(int i = 0; i <= viewAngle; i += 10)
                 {
-                    ChasePrey();
+                    SearchForPrey(i);
                 }
-                else
-                {
-                    SearchForPrey();
-                }
+            }
+
+            for (int i = 0; i <= 180; i += 10)
+            {
+                AvoidObstacle();
             }
 
             // Move forward
             transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime);
 
-            Vector3 leftDirection = Quaternion.Euler(0, -viewAngle / 2, 0) * transform.forward;
-            Vector3 rightDirection = Quaternion.Euler(0, viewAngle / 2, 0) * transform.forward;
-            Debug.DrawRay(transform.position, leftDirection * chaseDistance, Color.red);
-            Debug.DrawRay(transform.position, rightDirection * chaseDistance, Color.red);
+            if (transform.position.y > 1.2f) transform.position = new Vector3(transform.position.x, 1f, transform.position.z);
         }
 
-        private void SearchForPrey()
+        private void SearchForPrey(int angle)
         {
-            // Cast rays to detect prey
-            RaycastHit[] hits = Physics.RaycastAll(transform.position, transform.forward, chaseDistance);
+            // Cast rays to detect obstacles
+            RaycastHit hit;
+            Vector3 chaseDirection = Vector3.zero;
 
-            foreach (RaycastHit hit in hits)
+            // Calculate the angle of prey's view
+            Vector3 leftDirection = Quaternion.Euler(0, -angle / 2, 0) * transform.forward;
+            Vector3 rightDirection = Quaternion.Euler(0, angle / 2, 0) * transform.forward;
+            Debug.DrawRay(transform.position, leftDirection * chaseDistance, Color.red);
+            Debug.DrawRay(transform.position, rightDirection * chaseDistance, Color.red);
+
+            // Check for obstacles on the left side
+            if (Physics.Raycast(transform.position, leftDirection, out hit, chaseDistance))
             {
                 if (hit.collider.CompareTag("Prey"))
                 {
-                    // Prey detected, start chasing
-                    prey = hit.collider.gameObject;
-                    preyLastKnownPosition = prey.transform.position;
-                    ChasePrey();
-                    return;
+                    chaseDirection += leftDirection.normalized * (1f / hit.distance);
                 }
+            }
+
+            // Check for obstacles on the right side
+            if (Physics.Raycast(transform.position, rightDirection, out hit, chaseDistance))
+            {
+                if (hit.collider.CompareTag("Prey"))
+                {
+                    chaseDirection += rightDirection.normalized * (1f / hit.distance);
+                }
+            }
+
+            if (chaseDirection != Vector3.zero)
+            {
+                Quaternion targetRotation = Quaternion.LookRotation(chaseDirection);
+                transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
             }
         }
 
-        private void ChasePrey()
+        private void ChasePrey(Vector3 preyLastPos)
         {
             // Rotate towards the last known position of the prey
-            Vector3 directionToPrey = (preyLastKnownPosition - transform.position).normalized;
+            Vector3 directionToPrey = (preyLastPos - transform.position).normalized;
             Quaternion targetRotation = Quaternion.LookRotation(directionToPrey);
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
         }
@@ -81,22 +94,25 @@ namespace MengQiLei
             // Calculate the angle of prey's view
             Vector3 leftDirection = Quaternion.Euler(0, -45, 0) * transform.forward;
             Vector3 rightDirection = Quaternion.Euler(0, 45, 0) * transform.forward;
-            Debug.DrawRay(transform.position, leftDirection * avoidDistance, Color.green);
-            Debug.DrawRay(transform.position, rightDirection * avoidDistance, Color.green);
 
             int count = 0;
             // Check for obstacles on the left side
             if (Physics.Raycast(transform.position, leftDirection, out hit, avoidDistance))
             {
-                avoidanceDirection += -leftDirection.normalized * (1f / hit.distance); // Add avoidance force
-                count++;
+                if (!hit.collider.CompareTag("Prey")) {
+                    avoidanceDirection += -leftDirection.normalized * (1f / hit.distance);
+                    count++;
+                }
             }
 
             // Check for obstacles on the right side
             if (Physics.Raycast(transform.position, rightDirection, out hit, avoidDistance))
             {
-                avoidanceDirection += -rightDirection.normalized * (1f / hit.distance); // Add avoidance force
-                count++;
+                if (!hit.collider.CompareTag("Prey"))
+                {
+                    avoidanceDirection += -rightDirection.normalized * (1f / hit.distance);
+                    count++;
+                }
             }
 
             // Apply avoidance direction if needed
@@ -114,14 +130,12 @@ namespace MengQiLei
                 else
                 {
                     // Rotate the character 180 degrees around the y-axis
-                    transform.Rotate(Vector3.up, 180f);
+                    avoidanceDirection += transform.forward.normalized * (1f / hit.distance);
+                    Quaternion targetRotation = Quaternion.LookRotation(avoidanceDirection);
+                    transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+                    //transform.Rotate(Vector3.up, 180f);
                 }
             }
-        }
-
-        public bool isPredator()
-        {
-            return true;
         }
     }
 }

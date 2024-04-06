@@ -9,7 +9,7 @@ namespace MengQiLei
         [SerializeField] private GameObject origin;
         private float avoidDistance = 3f;
         private float rotationSpeed = 5f;
-        private int viewAngle = 90;
+        private int viewAngle = 200;
         private Vector3 targetPos;
         private Vector3 respawnPos;
 
@@ -21,9 +21,11 @@ namespace MengQiLei
 
         private void Update()
         {
-
-
-            AvoidObstacle();
+            // Cast rays
+            for (int i = 0; i <= viewAngle; i += 10)
+            {
+                AvoidObstacle(i);
+            }
 
             if (!wallAhead())
             {
@@ -54,7 +56,8 @@ namespace MengQiLei
         }
 
 
-        private void AvoidObstacle()
+        // Keep away from wall and predator
+        private void AvoidObstacle(int viewAngle)
         {
             // Cast rays to detect obstacles
             RaycastHit hit;
@@ -69,46 +72,35 @@ namespace MengQiLei
 
             int count = 0;
             // Check for obstacles on the left side
-            if (Physics.Raycast(transform.position, leftDirection, out hit, avoidDistance))
+            if (Physics.Raycast(transform.position, leftDirection, out hit, avoidDistance) && !hit.collider.CompareTag("Prey"))
             {
-                avoidanceDirection += -leftDirection.normalized * (1f / hit.distance); // Add avoidance force
+                avoidanceDirection += -leftDirection.normalized * (1f / hit.distance);
                 count++;
             }
 
             // Check for obstacles on the right side
-            if (Physics.Raycast(transform.position, rightDirection, out hit, avoidDistance))
+            if (Physics.Raycast(transform.position, rightDirection, out hit, avoidDistance) && !hit.collider.CompareTag("Prey"))
             {
-                avoidanceDirection += -rightDirection.normalized * (1f / hit.distance); // Add avoidance force
+                avoidanceDirection += -rightDirection.normalized * (1f / hit.distance);
                 count++;
             }
 
             // Apply avoidance direction if needed
             if (avoidanceDirection != Vector3.zero)
             {
-                if (count < 2)
-                {
-                    // Normalize the avoidance direction
-                    avoidanceDirection.Normalize();
+                // Normalize the avoidance direction
+                avoidanceDirection.Normalize();
 
-                    // Adjust the character's rotation to face the avoidance direction
-                    Quaternion targetRotation = Quaternion.LookRotation(avoidanceDirection);
-                    transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
-                } else
-                {
-                    // Rotate the character 180 degrees around the y-axis
-                    transform.Rotate(Vector3.up, 180f);
-                }
+                // Adjust the character's rotation to face the avoidance direction
+                Quaternion targetRotation = Quaternion.LookRotation(avoidanceDirection);
+                transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+                
             }
         }
 
         private void Die()
         {
             transform.position = respawnPos;
-        }
-
-        public bool isPrey()
-        {
-            return true;
         }
     }
 }

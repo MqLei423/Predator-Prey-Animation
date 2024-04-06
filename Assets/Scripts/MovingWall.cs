@@ -5,7 +5,7 @@ namespace MengQiLei
     public class MovingWall : MonoBehaviour
     {
         private float speed = 1f;
-        private float moveDistantce = 5f;
+        [SerializeField]private float moveDistantce = 5f;
 
         private Vector3 startPos;
         private Vector3 endPos;
